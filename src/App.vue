@@ -1,23 +1,54 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view></router-view>
+  <div :title="hi">
+    <p v-text="hello"></p>
+    <p v-html="hello"></p>
+    {{ status ? 'success' : 'fail' }}
+    <componentA></componentA>
+    <ul>
+      <li v-for="(value, key) in objList"> {{ key + '-' + value }} </li>
+    </ul>
   </div>
 </template>
 
 <script>
+import componentA from './components/Hello.vue'
 export default {
-  name: 'app'
+  components: {
+    componentA: componentA
+  },
+  data () {
+    return {
+      hello: '<span>world</span>',
+      hi: 'hi',
+      num: 1,
+      status: false,
+      list: [
+        {
+          name: 'apple',
+          price: 34
+        },
+        {
+          name: 'orgina',
+          price: 12
+        },
+        {
+          name: 'banana',
+          price: 35
+        }
+      ],
+      objList: {
+        name: 'apple',
+        price: 34,
+        color: 'red',
+        weight: 14
+      }
+    }
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+html {
+    height: 100%;
 }
 </style>
