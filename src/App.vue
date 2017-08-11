@@ -19,7 +19,7 @@
           <option v-for="item in selectOption" :value="item.value">{{ item.text }}</option>
       </select>
       {{ selection }}
-
+        <!--动画部分-->
       <button @click="toggleCom">fade toggle</button>
       <transition name="fade" mode="out-in">
         <div :is="currentView"></div>
