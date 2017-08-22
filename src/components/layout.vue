@@ -22,6 +22,8 @@
       <div class="app-foot">
           <p>© 2016 fishenal MIT</p>
       </div>
+
+
   </div>
 </template>
 
@@ -100,9 +102,6 @@ export default {
     .app-head-inner {
         width: 1200px;
         margin: 0 auto;
-    }
-    .head-logo {
-        float: left;
     }
     .app-head-inner img {
         width: 50px;
